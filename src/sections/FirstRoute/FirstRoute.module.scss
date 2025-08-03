@@ -1,0 +1,144 @@
+.firstRoute {
+  margin-top: 145px;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.firstRoute__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.firstRoute__title {
+  width: 660px;
+  font-size: 42px;
+  line-height: 95%;
+  font-weight: 500;
+  margin: 0 auto 20px auto;
+}
+
+.firstRoute__description {
+  font-size: 30px;
+  max-width: 1070px;
+  font-weight: 500;
+  line-height: 32px;
+  margin: 0 auto 20px auto;
+}
+
+.firstRoute__categories {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.firstRoute__category {
+  height: 400px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 0;
+
+  &:hover {
+    border: #c1f23c solid 1px;
+  }
+}
+
+.firstRoute__category_active {
+  color: white;
+  border: #c1f23c solid 1px;
+}
+
+.firstRoute__categoryTitle {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 32px;
+  margin-top: 58px;
+  color: white;
+}
+
+.firstRoute__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.firstRoute__card {
+  background: white;
+  border-radius: 16px;
+  min-height: 164px;
+  padding: 40px 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.firstRoute__cardTitle {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 120%;
+  color: black;
+  margin-bottom: 8px;
+}
+
+.firstRoute__cardDescription {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 100%;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .firstRoute__title {
+    width: 80%;
+    font-size: 1.5rem;
+  }
+
+  .firstRoute__description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .firstRoute__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .firstRoute__category {
+    height: 308px;
+  }
+
+  .firstRoute {
+    margin-top: 70px;
+  }
+
+  .firstRoute__categoryTitle {
+    font-size: 22px;
+    line-height: 100%;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .firstRoute__categories {
+    flex-direction: column;
+  }
+
+  .firstRoute__category {
+    margin-bottom: 12px;
+    padding: 42px;
+  }
+
+  .firstRoute__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

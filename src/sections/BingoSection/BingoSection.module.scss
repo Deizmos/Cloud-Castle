@@ -1,0 +1,54 @@
+.bingo {
+  margin-top: 145px;
+}
+
+.bingo__container {
+  margin: 0 auto;
+}
+
+.bingo__title {
+  width: 450px;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 95%;
+  margin: 0 auto 40px auto;
+}
+
+.bingo__cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bingo__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .bingo__row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .bingo {
+    margin-top: 100px;
+  }
+  .bingo__title {
+    width: 280px;
+    font-size: 28px;
+    margin: 0 auto 20px auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .bingo__row {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  .bingo {
+    margin-top: 70px;
+  }
+}

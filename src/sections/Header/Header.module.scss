@@ -1,0 +1,147 @@
+@use '../../styles/variables' as v;
+
+.header {
+  background-color: #282828;
+  height: 67px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  &_scrolled {
+    height: 60px;
+    background-color: rgba(#282828, 0.95);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.header__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__navList {
+  display: flex;
+  gap: 64px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 1024px) {
+    gap: 40px;
+  }
+}
+
+.header__navLink {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
+  opacity: 0.8;
+
+  &:hover {
+    color: #c1f23c;
+    opacity: 1;
+
+    &::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &.active {
+    color: #c1f23c;
+    opacity: 1;
+
+    &::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+
+.header__logo {
+  a {
+    display: block;
+    line-height: 0;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 60px;
+  }
+
+  .header__navList {
+    display: none;
+  }
+
+  .header__burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .header__burgerLine {
+    width: 100%;
+    height: 2px;
+    background-color: #A6ABB3;
+    transition: all 0.3s ease;
+    transform-origin: left center;
+
+    &:nth-child(1) {
+      transform-origin: left center;
+    }
+
+    &:nth-child(3) {
+      transform-origin: left center;
+    }
+  }
+
+  .header__burger_open {
+    .header__burgerLine:nth-child(1) {
+      transform: rotate(45deg) translate(1px, -1px);
+    }
+
+    .header__burgerLine:nth-child(2) {
+      opacity: 0;
+    }
+
+    .header__burgerLine:nth-child(3) {
+      transform: rotate(-45deg) translate(1px, 1px);
+    }
+  }
+}

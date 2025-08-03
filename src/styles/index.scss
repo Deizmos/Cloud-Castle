@@ -1,0 +1,54 @@
+@use './base' as *;
+@use '../styles/fonts' as *;
+
+$max-width: 100vw;
+$side-padding: 32px;
+$bg-color: #282828;
+$text-color: #FFFFFF;
+$p-size: 20px;
+$h2-size: 54px;
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $bg-color;
+  color: $text-color;
+
+}
+
+button,
+input,
+textarea,
+a {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+
+button:focus,
+button:active,
+input:focus,
+input:active,
+textarea:focus,
+textarea:active,
+a:focus,
+a:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.page-container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $side-padding;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    padding: 0 calc($side-padding/2);
+  }
+}
